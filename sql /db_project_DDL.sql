@@ -108,7 +108,7 @@ CREATE TABLE Biometric_Log (
 );
 
 CREATE TABLE joins (
-  Progress Varchar(10) NOT NULL,
+  Progress INT NOT NULL,
   user_id INT NOT NULL,
   c_id INT NOT NULL,
   PRIMARY KEY (user_id, c_id),
