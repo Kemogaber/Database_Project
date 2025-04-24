@@ -25,10 +25,12 @@ FROM User u
 JOIN Diet_Plan dp ON u.user_id = dp.user_id
 GROUP BY u.gender; -- getting the average protein for each gender 
 
-SELECT u.name
-FROM User u
-LEFT JOIN Log l ON u.user_id = l.user_id
-WHERE l.log_id IS NULL; -- getting the user who didn't log in since the account was created 
+SELECT name
+FROM User
+WHERE user_id NOT IN (
+  SELECT user_id FROM Log
+);
+ -- getting the user who never logged his data 
 
 SELECT DISTINCT u.name, d.Category
 FROM User u
