@@ -83,7 +83,7 @@ WHERE TIME(l.logged_at) < '09:00:00'; -- getting the users who logged in before 
 
 SELECT Category, AVG(Calories) AS avg_calories
 FROM Drink_Log
-GROUP BY Category;
+GROUP BY Category; -- getting average calories of Drinks categories
 
 SELECT u.name, AVG(d.daily_protein) AS avg_protein, AVG(d.daily_fats) AS avg_fats, AVG(d.daily_carbs) AS avg_carbs
 FROM User u
