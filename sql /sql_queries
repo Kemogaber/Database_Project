@@ -6,12 +6,11 @@ Limit 1 ;                       -- getting the user with the most total points
  -- by this information , we might provide a gift for the user with the most points 
 
 
-SELECT u.name, c.name AS challenge_name, u.Total_Points, c.Points_Target,
-       ROUND((u.Total_Points * 1.0 / c.Points_Target) * 100, 2) AS Completion_Percentage
+SELECT u.name, c.name AS challenge_name, j.Progress, c.Points_Target
 FROM User u
-JOIN Goal g ON u.user_id = g.user_id
-JOIN Challenge c ON c.Points_Target <= u.Total_Points
-ORDER BY Completion_Percentage DESC
+JOIN joins J ON U.user_id = J.user_id
+JOIN Challenge c ON j.cid = c.c_id
+ORDER BY j.Progress  DESC
 LIMIT 1; -- getting the closest user to finish a challenge 
 
 SELECT u.name, COUNT(l.log_id) AS log_count
