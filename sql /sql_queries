@@ -18,7 +18,7 @@ FROM User u
 JOIN Log l ON u.user_id = l.user_id
 GROUP BY u.name
 ORDER BY log_count DESC
-LIMIT 5; -- getting the 5 most users who logged his data 
+LIMIT 5; -- getting the 5 most users who logged in
 
 SELECT u.gender, AVG(dp.daily_protein) AS avg_protein
 FROM User u
@@ -30,7 +30,7 @@ FROM User
 WHERE user_id NOT IN (
   SELECT user_id FROM Log
 );
- -- getting the user who never logged his data 
+ -- getting the user who never logged in 
 
 SELECT DISTINCT u.name, d.Category
 FROM User u
