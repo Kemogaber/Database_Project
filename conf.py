@@ -52,19 +52,13 @@ latex_elements = {
             Shams El-Din Mohamed Abdel-Monem & 2101442 -- S3 \\
             Ahmed Said Sayed & 2101546 -- S3 \\
             Abdelrahman Sherif Hassan & 2100735 -- S3 \\
-            Mahmoud Essam Noureldin & 2001393 -- S2 \\
-            Omar Tamer Mohamed & 2100528 -- S3 \\
             Fares Khalaf Salman Sultan & 2101371 -- S3 \\
             Kareem Gaber El Halaby & 2101545 -- S3 \\
+            Omar Tamer Mohamed & 2100528 -- S3 \\
+            Youssof Waleed Fathi & 2101734 -- S3 \\
+            Yousef Mohammed Hassan Abouelela & 2101076 -- S2 \\
             \bottomrule
         \end{tabular}
-        \begin{center}
-            \vspace{0.5cm}
-            \href{https://drive.google.com/drive/folders/1inorJT3szzcwwwBvrDLMuET0bF2pKwto?usp=drive_link}{\textbf{Executable File and Source Code}}
-
-            Please check section \ref{\detokenize{index:remarks-target}} for important remarks before running executable.
-            \vspace{0.5cm}
-        \end{center}
         }
         \vfill
     \end{titlepage}
