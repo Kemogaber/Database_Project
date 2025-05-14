@@ -6,3 +6,7 @@ services:
       MYSQL_DATABASE: tracker
     volumes:
       - ./sql/init:/docker-entrypoint-initdb.d
+  analytics:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
