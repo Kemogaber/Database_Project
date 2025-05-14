@@ -1,7 +1,3 @@
-Create database db_project;
-
-use db_project;
-
 CREATE TABLE User
 (
   created_at INT NOT NULL,

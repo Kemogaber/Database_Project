@@ -1,0 +1,8 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: tracker
+    volumes:
+      - ./sql/init:/docker-entrypoint-initdb.d
