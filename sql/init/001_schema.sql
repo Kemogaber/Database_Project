@@ -1,20 +1,22 @@
 CREATE DOMAIN Points AS INTEGER CHECK (VALUE >= 0);
 CREATE DOMAIN UINT AS INTEGER CHECK (VALUE >= 0);
+CREATE TYPE gender_enum AS ENUM ('Male', 'Female');
+CREATE TYPE category_enum AS ENUM ('WATER', 'JUICE', 'SODA');
+CREATE TYPE status_enum AS ENUM ('Pending', 'Accepted', 'Rejected', 'Blocked');
 
-
-CREATE TABLE User
+CREATE TABLE "User"
 (
     created_at INT NOT NULL,
     DOB DATE NOT NULL,
     name Varchar(50) NOT NULL,
-    gender ENUM('Male', 'Female') NOT NULL,
+    gender gender_enum NOT NULL,
     email Varchar(50) NOT NULL,
     password Varchar(50) NOT NULL,
     user_id INT NOT NULL,
     Total_Points Points NOT NULL,
     PRIMARY KEY (user_id),
     CONSTRAINT email_unique UNIQUE (email),
-    CONSTRAINT chk_dob CHECK (DOB >= '1900-01-01' AND DOB <= CURRENT_DATE),
+    CONSTRAINT chk_dob CHECK (DOB >= '1900-01-01' AND DOB <= CURRENT_DATE)
 );
 
 CREATE TABLE Challenge (
@@ -32,7 +34,7 @@ CREATE TABLE Goal (
     Point_Value Points NOT NULL,
     user_id INT,
     PRIMARY KEY (g_id),
-    FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES "User"(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT chk_start_date CHECK (start_date >= CURRENT_DATE),
     CONSTRAINT chk_date_range CHECK (end_date > start_date)
 );
@@ -45,7 +47,7 @@ CREATE TABLE Diet_Plan (
     daily_cal UINT NOT NULL,
     user_id INT NOT NULL,
     PRIMARY KEY (plan_id),
-    FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (user_id) REFERENCES "User"(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Exercise (
@@ -53,33 +55,33 @@ CREATE TABLE Exercise (
   video_url VARCHAR(255) NOT NULL,
   Description TEXT NOT NULL,
   sets UINT NOT NULL,
-  reps_per_set INT NOT NULL (reps_per_set > 5 AND reps_per_set < 20),
-  duration FLOAT NOT NULL (duration > 0),
+  reps_per_set INT NOT NULL CHECK(reps_per_set > 5 AND reps_per_set < 20),
+  duration FLOAT NOT NULL CHECK(duration > 0),
   PRIMARY KEY (e_id)
 );
 
 CREATE TABLE Log (
   log_id INT NOT NULL,
-  logged_at DATETIME NOT NULL,
+  logged_at TIMESTAMP NOT NULL,
   user_id INT,
   PRIMARY KEY (log_id),
-  FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES "User"(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Food_Log (
   log_id INT NOT NULL,
   PRIMARY KEY (log_id),
-  FOREIGN KEY (log_id) REFERENCES Log(log_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (log_id) REFERENCES Log(log_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Drink_Log (
   Calories UINT,
-  Category ENUM('WATER', 'JUICE', 'SODA') NOT NULL,
+  Category category_enum NOT NULL,
   Hydration_Level UINT NOT NULL,
   amount UINT NOT NULL,
   log_id INT NOT NULL,
   PRIMARY KEY (log_id),
-  FOREIGN KEY (log_id) REFERENCES Log(log_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (log_id) REFERENCES Log(log_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Food (
@@ -101,7 +103,7 @@ CREATE TABLE Inbody_Log (
   log_id INT NOT NULL,
   PRIMARY KEY (log_id),
   FOREIGN KEY (log_id) REFERENCES Log(log_id) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT chk_totality CHECK (Muscle_Mass + Fat_Mass + Water_Percentage = 100),
+  CONSTRAINT chk_totality CHECK (Muscle_Mass + Fat_Mass + Water_Percentage = 100)
 );
 
 CREATE TABLE Biometric_Log (
@@ -109,7 +111,7 @@ CREATE TABLE Biometric_Log (
   Blood_Pressure_upper UINT NOT NULL,
   log_id INT NOT NULL,
   PRIMARY KEY (log_id),
-  FOREIGN KEY (log_id) REFERENCES Log(log_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (log_id) REFERENCES Log(log_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE joins (
@@ -117,8 +119,8 @@ CREATE TABLE joins (
   user_id INT NOT NULL,
   c_id INT,
   PRIMARY KEY (user_id, c_id),
-  FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (c_id) REFERENCES Challenge(c_id) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES "User"(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (c_id) REFERENCES Challenge(c_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE Includes (
@@ -133,7 +135,7 @@ CREATE TABLE Does (
   user_id INT NOT NULL,
   e_id INT NOT NULL,
   PRIMARY KEY (user_id, e_id),
-  FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE ,
+  FOREIGN KEY (user_id) REFERENCES "User"(user_id) ON DELETE CASCADE ON UPDATE CASCADE ,
   FOREIGN KEY (e_id) REFERENCES Exercise(e_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
@@ -155,12 +157,12 @@ CREATE TABLE Holds (
 );
 
 CREATE TABLE Friends (
- Status ENUM('Pending', 'Accepted', 'Rejected', 'Blocked') NOT NULL,
+  "Status" status_enum NOT NULL,
   User_Id INT NOT NULL,
   Friend_Id INT NOT NULL,
   PRIMARY KEY (User_Id, Friend_Id),
-  FOREIGN KEY (User_Id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (Friend_Id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (User_Id) REFERENCES "User"(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (Friend_Id) REFERENCES "User"(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Exercise_Muscle_Group (
