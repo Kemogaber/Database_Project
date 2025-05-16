@@ -1,440 +1,111 @@
-INSERT INTO User (created_at, DOB, name, gender, email, password, user_id, Total_Points) VALUES
-(20242914, 19957583, 'Ronnie', 'Male', 'ronnie_johnston@gmail.com', '&UUv_XqZb1', 1, 9570),
-(20223148, 19953538, 'Sarah', 'Female', 'sarah_spencer@gmail.com', 'T(+8Ngvj%E', 2, 3259),
-(20247423, 19771043, 'Daniel', 'Male', 'daniel_lee@hotmail.com', 'P%2Ex^Kfyj', 3, 8344),
-(20232777, 20007972, 'Samantha', 'Female', 'samantha_james@yahoo.com', 'J7sQGke!*F', 4, 1764),
-(20212059, 19911056, 'April', 'Female', 'april_wolf@gmail.com', 'D5Chi*5%#V', 5, 2068),
-(20239023, 19984837, 'Taylor', 'Female', 'taylor_franklin@gmail.com', 'Xd9X3kRrj*', 6, 8700),
-(20203022, 19931652, 'Andrea', 'Female', 'andrea_vasquez@yahoo.com', '%eWCZjHy%7', 7, 7429),
-(20238333, 19916772, 'Ethan', 'Male', 'ethan_jones@roth.com', '41iG&pI_#c', 8, 7859),
-(20242331, 19932734, 'Jacqueline', 'Female', 'jacqueline_brown@taylor.biz', 'O$2rLZygbC', 9, 216),
-(20242566, 20083636, 'Ernest', 'Male', 'anna@hill.info', 'fExLxqAe^1', 10, 8113),
-(20238160, 19974613, 'Billy', 'Male', 'billyallison@hotmail.com', 'm@%4QjWgvs', 11, 9035),
-(20240767, 19844341, 'Patrick', 'Male', 'patrickDalton@gmail.com', '10BseITG$s', 12, 7790),
-(20227213, 19769564, 'Stephanie', 'Female', 'stephanie_rivera@gmail.com', 'q68wJxny%u', 13, 9996),
-(20231642, 19952529, 'Emily', 'Female', 'emilyHubbard@gmail.com', '6WZ3Fz$u$s', 14, 2364),
-(20229036, 19847397, 'Austin', 'Male', 'austin_schroeder@house.biz', '(Jv1Rh)XFJ', 15, 8108),
-(20214706, 19996895, 'Heather', 'Female', 'heather_gary@burton-gomez.com', 'H^90OkbO!@', 16, 5928),
-(20206085, 19766760, 'Susan', 'Female', 'susanNichols@gmail.com', 'J^97QKJi53', 17, 230),
-(20226885, 20055285, 'Kevin', 'Male', 'kkaiser@farmer.com', 'E@25PUn^If', 18, 7484),
-(20248991, 19910659, 'Debra', 'Female', 'debra_hensley@lawrence.com', 'z(^6TFAoK#', 19, 7128),
-(20233932, 20083373, 'Arthur', 'Male', 'arthur_solis@hampton.com', '$R8#9rEgt!', 20, 3084);
+-- Insert statements for PostgreSQL database
+-- Generated on 2025-05-16, respecting all schema constraints
 
+-- User Table
+INSERT INTO "User" (user_id, name, gender, email, password, DOB, created_at, Total_Points) VALUES
+(6, 'Emma Wilson', 'Female', 'emma.wilson@example.com', 'pass7890', '1990-04-12', 1617235200, 600),
+(7, 'Michael Lee', 'Male', 'michael.lee@example.com', 'pass1234', '1988-08-25', 1625097600, 400),
+(8, 'Sarah Kim', 'Female', 'sarah.kim@example.com', 'pass5678', '1997-01-30', 1632960000, 250),
+(9, 'David Chen', 'Male', 'david.chen@example.com', 'pass9012', '1983-06-15', 1640822400, 800),
+(10, 'Lisa Taylor', 'Female', 'lisa.taylor@example.com', 'pass3456', '1992-11-20', 1648684800, 150);
 
+-- Challenge Table
 INSERT INTO Challenge (c_id, name, description, Points_Target) VALUES
-(1, '10K Steps a Day', 'Encourages users to walk at least 10,000 steps daily to promote cardiovascular health and general fitness.', 1000),
-(2, 'Hydration Hero', 'Aims to help users drink 2–3 liters of water daily by logging each drink entry.', 600),
-(3, 'No Sugar Week', 'Challenges users to eliminate added sugars from their diet for one full week.', 1200),
-(4, 'Sleep Champion', 'Motivates users to track and improve sleep patterns for at least 7 hours/night.', 700),
-(5, 'Mindfulness Minute', 'Encourages daily mindfulness or meditation sessions of 10+ minutes.', 500),
-(6, 'Meal Prep Master', 'Encourages users to plan and prepare their meals for the entire week.', 900),
-(7, 'Early Riser', 'Promotes waking up before 6:30 AM for consistent early productivity.', 400),
-(8, 'Healthy Snacking', 'Replace processed snacks with fruits, nuts, or veggies daily.', 600),
-(9, 'Fruit Frenzy', 'Eat 3 different fruits per day, every day for 10 days.', 850),
-(10, 'Step it Up', 'Hit a personal record of steps in a single week.', 950),
-(11, 'Fitness Fusion', 'Mix cardio, strength, and flexibility workouts for a balanced plan.', 1600);
+(4, 'Hydration Challenge', 'Drink 2L of water daily for 30 days', 600),
+(5, 'Strength Challenge', 'Increase bench press weight by 10kg', 900),
+(6, 'Flexibility Challenge', 'Complete daily yoga for 1 month', 400);
 
-
+-- Goal Table
 INSERT INTO Goal (g_id, start_date, end_date, Point_Value, user_id) VALUES
-(1, 20240101, 20240114, 1000, 1),
-(2, 20240115, 20240128, 1200, 2),
-(3, 20240201, 20240214, 900, 3),
-(4, 20240215, 20240228, 1100, 4),
-(5, 20240301, 20240315, 950, 5),
-(6, 20240316, 20240330, 1250, 6),
-(7, 20240401, 20240414, 1000, 7),
-(8, 20240415, 20240428, 1350, 8),
-(9, 20240501, 20240514, 850, 9),
-(10, 20240515, 20240529, 1150, 10),
-(11, 20240601, 20240614, 1300, 11),
-(12, 20240615, 20240628, 900, 12),
-(13, 20240701, 20240714, 1250, 13),
-(14, 20240715, 20240730, 1100, 14),
-(15, 20240801, 20240815, 950, 15),
-(16, 20240816, 20240831, 1000, 16),
-(17, 20240901, 20240914, 1050, 17),
-(18, 20240915, 20240930, 1150, 18),
-(19, 20241001, 20241014, 850, 19),
-(20, 20241015, 20241030, 1250, 20);
+(4, '2025-05-18', '2025-06-18', 250, 6),
+(5, '2025-05-20', '2025-07-20', 400, 7),
+(6, '2025-06-01', '2025-08-01', 300, 8);
 
+-- Diet_Plan Table
+INSERT INTO Diet_Plan (plan_id, daily_protein, daily_fats, daily_carbs, daily_cal, user_id) VALUES
+(4, 130, 45, 190, 1900, 6),
+(5, 160, 55, 220, 2200, 7),
+(6, 110, 35, 170, 1700, 8);
 
+-- Exercise Table
 INSERT INTO Exercise (e_id, video_url, Description, sets, reps_per_set, duration) VALUES
-(1, 'https://youtu.be/pushups101', 'Push-ups for upper body strength', 3, 15, 10),
-(2, 'https://youtu.be/squats101', 'Squats for lower body endurance', 4, 20, 15),
-(3, 'https://youtu.be/plankcore', 'Plank hold for core strength', 3, 1, 5),
-(4, 'https://youtu.be/jumpingjacks', 'Jumping jacks for cardio warm-up', 3, 30, 7),
-(5, 'https://youtu.be/lungesfit', 'Lunges to improve balance and strength', 4, 12, 10),
-(6, 'https://youtu.be/burpeeshred', 'Burpees for full-body conditioning', 3, 10, 8),
-(7, 'https://youtu.be/mtnclimbers', 'Mountain climbers to boost heart rate', 4, 20, 6),
-(8, 'https://youtu.be/legraisesabs', 'Leg raises for abdominal muscles', 3, 15, 9),
-(9, 'https://youtu.be/wallsitsleg', 'Wall sits to strengthen thighs', 2, 1, 5),
-(10, 'https://youtu.be/shouldertaps', 'Shoulder taps for core stability', 3, 20, 7),
-(11, 'https://youtu.be/crunchcore', 'Crunches to tone abdominal area', 3, 25, 6),
-(12, 'https://youtu.be/bikecrunch', 'Bicycle crunches for obliques', 3, 20, 8),
-(13, 'https://youtu.be/calfraises', 'Calf raises to build calf strength', 4, 30, 5),
-(14, 'https://youtu.be/tricepdips', 'Tricep dips on chair', 3, 15, 6),
-(15, 'https://youtu.be/highknees', 'High knees to boost agility', 3, 30, 6),
-(16, 'https://youtu.be/hipbridges', 'Hip bridges for glutes and core', 3, 20, 7),
-(17, 'https://youtu.be/revcrunches', 'Reverse crunches', 3, 20, 6),
-(18, 'https://youtu.be/sideplanks', 'Side planks for side core muscles', 2, 1, 5),
-(19, 'https://youtu.be/armcircles', 'Arm circles as warm-up', 3, 50, 4),
-(20, 'https://youtu.be/jumpsquats', 'Jump squats for explosive strength', 4, 10, 8);
+(4, 'http://example.com/deadlifts.mp4', 'Deadlifts', 3, 8, 2.5),
+(5, 'http://example.com/plank.mp4', 'Plank', 3, 12, 1.5),
+(6, 'http://example.com/pullups.mp4', 'Pull-ups', 4, 10, 2.0);
 
-
-
-
-INSERT INTO Diet_Plan (daily_protein, plan_id, daily_fats, daily_carbs, daily_cal, user_id) VALUES
-(100, 1, 50, 150, 1800, 1),
-(120, 2, 60, 160, 2000, 2),
-(110, 3, 55, 140, 1900, 3),
-(90, 4, 45, 130, 1700, 4),
-(130, 5, 70, 180, 2100, 5),
-(95, 6, 40, 120, 1600, 6),
-(125, 7, 65, 170, 2050, 7),
-(105, 8, 50, 150, 1850, 8),
-(115, 9, 55, 160, 1950, 9),
-(135, 10, 75, 190, 2200, 10),
-(90, 11, 40, 110, 1600, 11),
-(100, 12, 45, 130, 1750, 12),
-(110, 13, 50, 140, 1850, 13),
-(120, 14, 60, 150, 1950, 14),
-(130, 15, 65, 170, 2100, 15),
-(95, 16, 42, 125, 1650, 16),
-(105, 17, 48, 135, 1800, 17),
-(115, 18, 52, 145, 1900, 18),
-(125, 19, 70, 175, 2050, 19),
-(135, 20, 80, 200, 2250, 20);
-
-
+-- Log Table
 INSERT INTO Log (log_id, logged_at, user_id) VALUES
-(1, '2024-01-03 08:00:00', 1),
-(2, '2024-01-15 08:10:00', 1),
-(3, '2024-03-12 07:55:00', 1),
-(4, '2024-01-10 09:20:00', 3),
-(5, '2024-01-15 07:45:00', 3),
-(6, '2024-02-02 10:30:00', 3),
-(7, '2024-03-01 06:50:00', 3),
-(8, '2024-04-10 08:25:00', 3),
-(9, '2024-01-22 09:30:00', 4),
-(10, '2024-02-10 08:40:00', 5),
-(11, '2024-03-10 07:00:00', 5),
-(12, '2024-02-15 10:15:00', 6),
-(13, '2024-04-02 07:10:00', 6),
-(14, '2024-01-28 09:45:00', 7),
-(15, '2024-03-04 08:00:00', 7),
-(16, '2024-03-25 08:50:00', 7),
-(17, '2024-05-01 07:20:00', 7),
-(18, '2024-02-01 08:00:00', 8),
-(19, '2024-02-28 09:35:00', 8),
-(20, '2024-03-22 08:55:00', 8),
-(21, '2024-01-11 07:35:00', 9),
-(22, '2024-04-20 07:10:00', 9),
-(23, '2024-03-12 07:00:00', 10),
-(24, '2024-03-14 09:45:00', 10),
-(25, '2024-01-07 08:10:00', 11),
-(26, '2024-01-09 07:20:00', 11),
-(27, '2024-01-12 09:00:00', 11),
-(28, '2024-02-04 08:55:00', 11),
-(29, '2024-03-18 07:25:00', 11),
-(30, '2024-04-05 07:00:00', 12),
-(31, '2024-02-10 08:45:00', 13),
-(32, '2024-03-08 09:10:00', 13),
-(33, '2024-03-28 08:35:00', 13),
-(34, '2024-04-12 07:30:00', 13),
-(35, '2024-05-02 09:00:00', 13),
-(36, '2024-01-14 09:25:00', 14),
-(37, '2024-02-20 08:50:00', 14),
-(38, '2024-04-18 08:00:00', 15),
-(39, '2024-05-05 09:30:00', 15),
-(40, '2024-01-18 07:40:00', 16),
-(41, '2024-02-08 08:20:00', 16),
-(42, '2024-04-10 08:55:00', 16),
-(43, '2024-04-28 09:05:00', 16),
-(44, '2024-03-05 08:40:00', 17),
-(45, '2024-03-10 07:15:00', 17),
-(46, '2024-03-14 08:35:00', 17),
-(47, '2024-04-02 09:20:00', 17),
-(48, '2024-05-01 07:50:00', 17),
-(49, '2024-02-22 08:30:00', 18),
-(50, '2024-04-14 09:00:00', 18),
-(51, '2024-01-25 07:25:00', 19),
-(52, '2024-03-15 08:45:00', 19),
-(53, '2024-04-01 09:10:00', 19),
-(54, '2024-01-19 08:15:00', 20),
-(55, '2024-03-09 08:50:00', 20),
-(56, '2024-04-22 07:00:00', 20),
-(57, '2024-04-30 09:25:00', 20),
-(58, '2024-05-03 08:20:00', 20),
-(59, '2024-02-18 07:10:00', 6),
-(60, '2024-03-06 09:50:00', 5);
+(7, '2025-05-15 08:00:00', 6),
+(8, '2025-05-16 10:30:00', 6),
+(9, '2025-05-16 14:00:00', 7),
+(10, '2025-05-15 16:00:00', 7),
+(11, '2025-05-16 09:00:00', 8),
+(12, '2025-05-16 11:00:00', 8);
 
-
-
+-- Food_Log Table
 INSERT INTO Food_Log (log_id) VALUES
-(1), (3), (5), (7), (9),
-(11), (13), (15), (17), (19),
-(2), (4), (6), (8), (10),
-(12), (14), (16), (18), (20);
+(7),
+(11);
 
-INSERT INTO Drink_Log (Calories, Category, Hydration_Level, amount, log_id) VALUES
-(50, 'Water', 100, 500, 1),
-(120, 'Juice', 80, 300, 2),
-(90, 'Tea', 70, 250, 3),
-(200, 'Soda', 60, 330, 4),
-(0, 'Water', 100, 600, 5),
-(150, 'Smoothie', 85, 350, 6),
-(80, 'Coffee', 65, 200, 7),
-(100, 'Milk', 75, 250, 8),
-(60, 'Herbal Tea', 90, 300, 9),
-(180, 'Energy Drink', 50, 400, 10),
-(70, 'Lemonade', 85, 300, 11),
-(110, 'Iced Tea', 70, 350, 12),
-(0, 'Water', 100, 700, 13),
-(130, 'Fruit Punch', 60, 330, 14),
-(95, 'Coconut Water', 90, 500, 15),
-(85, 'Green Tea', 80, 250, 16),
-(140, 'Chocolate Milk', 65, 300, 17),
-(100, 'Protein Shake', 75, 350, 18),
-(60, 'Sparkling Water', 95, 400, 19),
-(0, 'Water', 100, 550, 20);
+-- Drink_Log Table
+INSERT INTO Drink_Log (log_id, Calories, Category, Hydration_Level, amount) VALUES
+(8, 0, 'WATER', 100, 750),
+(12, 120, 'JUICE', 80, 250);
 
+-- Food Table
+INSERT INTO Food (f_id, name, calories, protein, fats, carbohydrates) VALUES
+(4, 'Salmon', 206, 22, 13, 0),
+(5, 'Quinoa', 222, 8, 4, 39),
+(6, 'Banana', 90, 1, 0, 23);
 
-INSERT INTO Food (calories, name, protein, fats, carbohydrates, f_id) VALUES
-(250, 'Grilled Chicken Breast', 30, 6, 0, 1),
-(95, 'Apple', 0, 0, 25, 2),
-(165, 'Boiled Egg', 13, 11, 1, 3),
-(180, 'Brown Rice', 4, 1, 38, 4),
-(150, 'Avocado', 2, 14, 9, 5),
-(300, 'Salmon', 34, 20, 0, 6),
-(90, 'Carrot', 1, 0, 21, 7),
-(60, 'Broccoli', 3, 0, 12, 8),
-(180, 'Whole Wheat Bread', 6, 3, 30, 9),
-(280, 'Almonds', 10, 24, 8, 10),
-(110, 'Greek Yogurt', 10, 2, 7, 11),
-(130, 'Oatmeal', 5, 2, 27, 12),
-(220, 'Tuna', 27, 5, 0, 13),
-(100, 'Banana', 1, 0, 27, 14),
-(270, 'Peanut Butter', 9, 22, 7, 15),
-(350, 'Beef Steak', 33, 25, 0, 16),
-(70, 'Spinach', 3, 0, 10, 17),
-(85, 'Cucumber', 1, 0, 15, 18),
-(240, 'Tofu', 19, 12, 9, 19),
-(105, 'Orange', 1, 0, 26, 20);
+-- Inbody_Log Table
+INSERT INTO Inbody_Log (log_id, Muscle_Mass, Weight, Fat_Mass, Water_Percentage, height) VALUES
+(9, 38, 65, 17, 45, 170);
 
+-- Biometric_Log Table
+INSERT INTO Biometric_Log (log_id, Heart_Rate, Blood_Pressure_upper) VALUES
+(10, 65, 115);
 
-INSERT INTO Exercise_Muscle_Group (Muscle_Group, e_id) VALUES
-('Chest', 1),
-('Back', 2),
-('Legs', 3),
-('Shoulders', 4),
-('Arms', 5),
-('Abs', 6),
-('Full Body', 7),
-('Cardio', 8),
-('Glutes', 9),
-('Triceps', 10),
-('Biceps', 11),
-('Calves', 12),
-('Forearms', 13),
-('Neck', 14),
-('Lower Back', 15),
-('Core', 16),
-('Hamstrings', 17),
-('Quads', 18);
+-- joins Table
+INSERT INTO joins (user_id, c_id, Progress) VALUES
+(6, 4, 30),
+(7, 5, 40),
+(8, 6, 10);
 
-INSERT INTO Friends (Status, User_Id, Friend_Id) VALUES
-('Accepted', 1, 2),
-('Pending', 1, 3),
-('Rejected', 1, 4),
-('Accepted', 2, 5),
-('Blocked', 2, 6),
-('Accepted', 3, 4),
-('Pending', 3, 7),
-('Accepted', 4, 5),
-('Rejected', 4, 6),
-('Accepted', 5, 1),
-('Blocked', 5, 8),
-('Accepted', 6, 2),
-('Accepted', 6, 7),
-('Pending', 7, 3),
-('Accepted', 7, 8),
-('Rejected', 8, 9),
-('Accepted', 8, 10),
-('Pending', 9, 10),
-('Blocked', 9, 1),
-('Accepted', 10, 11),
-('Accepted', 11, 12),
-('Rejected', 11, 13),
-('Pending', 12, 14),
-('Accepted', 13, 15),
-('Blocked', 13, 16),
-('Accepted', 14, 17),
-('Rejected', 15, 18),
-('Pending', 16, 19),
-('Accepted', 17, 20),
-('Accepted', 18, 1);
-
-
+-- Includes Table
 INSERT INTO Includes (c_id, g_id) VALUES
-(1, 1), (1, 2),
-(2, 3), (2, 4),
-(3, 5), (3, 6),
-(4, 7), (4, 8),
-(5, 9), (5, 10),
-(6, 11), (6, 12),
-(7, 13), (7, 14),
-(8, 15), (8, 16),
-(9, 17), (9, 18),
-(10, 19), (10, 20);
+(4, 4),
+(5, 5),
+(6, 6);
 
-
-INSERT INTO Inbody_Log (Muscle_Mass, Weight, Fat_Mass, Water_Percentage, height, log_id) VALUES
-(20, 70, 15, 60, 175, 1), (18, 68, 14, 62, 170, 2), (22, 75, 18, 58, 180, 3), (24, 80, 20, 55, 185, 4), (19, 72, 17, 61, 178, 5),
-(23, 78, 19, 57, 176, 6), (21, 74, 16, 60, 173, 7), (20, 70, 15, 62, 174, 8), (22, 76, 18, 59, 177, 9), (25, 82, 21, 54, 179, 10),
-(19, 71, 16, 63, 175, 11), (21, 77, 17, 60, 180, 12), (23, 79, 19, 56, 182, 13), (20, 72, 16, 61, 170, 14), (24, 81, 20, 55, 185, 15),
-(22, 75, 18, 58, 178, 16), (19, 70, 15, 62, 174, 17), (20, 73, 16, 59, 173, 18), (21, 76, 17, 60, 177, 19), (23, 80, 19, 57, 179, 20);
-
-
-INSERT INTO Biometric_Log (Heart_Rate, Blood_Pressure, log_id) VALUES
-(72, 120, 1), (75, 118, 2), (80, 125, 3), (70, 115, 4), (76, 130, 5),
-(74, 120, 6), (72, 118, 7), (78, 122, 8), (77, 125, 9), (73, 115, 10),
-(75, 128, 11), (72, 120, 12), (79, 132, 13), (74, 124, 14), (71, 116, 15),
-(78, 120, 16), (73, 118, 17), (75, 130, 18), (80, 135, 19), (77, 122, 20);
-
-
-INSERT INTO joins (Progress, user_id, c_id) VALUES
-(50, 1, 2),
-(80, 2, 3),
-(30, 3, 1),
-(70, 4, 4),
-(60, 5, 5),
-(90, 6, 6),
-(40, 7, 7),
-(20, 8, 8),
-(75, 9, 9),
-(55, 10, 10),
-(85, 11, 11),
-(45, 12, 1),
-(25, 13, 2),
-(65, 14, 3),
-(95, 15, 4),
-(35, 16, 5),
-(15, 17, 6),
-(78, 18, 7),
-(88, 19, 8),
-(58, 20, 9),
-(62, 1, 10),
-(72, 2, 11),
-(33, 3, 2),
-(43, 4, 3),
-(53, 5, 4),
-(63, 6, 5),
-(73, 7, 6),
-(83, 8, 7),
-(93, 9, 8),
-(29, 10, 9);
-
-
+-- Does Table
 INSERT INTO Does (user_id, e_id) VALUES
-(1, 1), (1, 3), (1, 6), 
-(2, 2), (2, 4), (2, 5), 
-(3, 5), (3, 7), (3, 9), 
-(4, 8), (4, 10), (4, 12), 
-(5, 11), (5, 13), (5, 14), 
-(6, 15), (6, 17), (6, 18), 
-(7, 1), (7, 4), (7, 13), 
-(8, 2), (8, 9), (8, 16), 
-(9, 3), (9, 5), (9, 7), 
-(10, 6), (10, 8), (10, 14), 
-(11, 2), (11, 6), (11, 17), 
-(12, 8), (12, 10), (12, 15), 
-(13, 1), (13, 4), (13, 12), 
-(14, 5), (14, 8), (14, 16), 
-(15, 7), (15, 9), (15, 19), 
-(16, 3), (16, 6), (16, 11), 
-(17, 2), (17, 13), (17, 18), 
-(18, 4), (18, 7), (18, 15), 
-(19, 5), (19, 10), (19, 14), 
-(20, 1), (20, 3), (20, 20);
+(6, 4),
+(7, 5),
+(8, 6);
 
+-- Practiced_In Table
 INSERT INTO Practiced_In (e_id, g_id) VALUES
-(1, 1), (3, 1), (6, 1),
-(2, 2), (4, 2), (5, 2),
-(5, 3), (7, 3), (9, 3),
-(8, 4), (10, 4), (12, 4),
-(11, 5), (13, 5), (14, 5),
-(15, 6), (17, 6), (18, 6),
-(1, 7), (4, 7), (13, 7),
-(2, 8), (9, 8), (16, 8),
-(3, 9), (5, 9), (7, 9),
-(6, 10), (8, 10), (14, 10),
-(2, 11), (6, 11), (17, 11),
-(8, 12), (10, 12), (15, 12),
-(1, 13), (4, 13), (12, 13),
-(5, 14), (8, 14), (16, 14),
-(7, 15), (9, 15), (19, 15),
-(3, 16), (6, 16), (11, 16),
-(2, 17), (13, 17), (18, 17),
-(4, 18), (7, 18), (15, 18),
-(5, 19), (10, 19), (14, 19),
-(1, 20), (3, 20), (20, 20);
+(4, 4),
+(5, 5),
+(6, 6);
 
-INSERT INTO Holds (quantity, log_id, f_id) VALUES
-(3, 1, 1),
-(2, 1, 2),
-(5, 1, 4),
-(1, 2, 6),
-(4, 2, 7),
-(3, 2, 9),
-(3, 3, 5),
-(2, 3, 8),
-(6, 3, 3),
-(4, 4, 1),
-(5, 4, 4),
-(3, 4, 10),
-(2, 5, 2),
-(6, 5, 12),
-(5, 5, 14),
-(3, 6, 11),
-(7, 6, 13),
-(4, 6, 15),
-(2, 7, 16),
-(5, 7, 17),
-(3, 7, 18),
-(6, 8, 19),
-(4, 8, 20),
-(3, 9, 1),
-(2, 9, 9),
-(5, 9, 10),
-(4, 10, 7),
-(3, 10, 8),
-(2, 10, 5),
-(6, 11, 6),
-(1, 11, 12),
-(7, 12, 13),
-(4, 12, 14),
-(2, 12, 15),
-(3, 13, 11),
-(5, 13, 3),
-(6, 13, 4),
-(4, 14, 16),
-(5, 14, 17),
-(3, 14, 18),
-(7, 15, 19),
-(3, 15, 1),
-(6, 15, 20),
-(5, 16, 9),
-(2, 16, 8),
-(3, 16, 14),
-(4, 17, 6),
-(1, 17, 5),
-(6, 18, 2),
-(2, 18, 4),
-(3, 18, 12),
-(4, 19, 1),
-(5, 19, 10),
-(2, 19, 17),
-(6, 20, 5),
-(3, 20, 13),
-(4, 20, 16);
+-- Holds Table
+INSERT INTO Holds (log_id, f_id, quantity) VALUES
+(7, 4, 1),
+(7, 5, 1),
+(11, 6, 2);
 
+-- Friends Table
+INSERT INTO Friends (User_Id, Friend_Id, "Status") VALUES
+(6, 7, 'Accepted'),
+(7, 6, 'Accepted'),
+(8, 9, 'Pending'),
+(9, 8, 'Pending'),
+(6, 10, 'Rejected');
+
+-- Exercise_Muscle_Group Table
+INSERT INTO Exercise_Muscle_Group (Muscle_Group, Description, e_id) VALUES
+('Back', 'Lats, traps, lower back', 4),
+('Core', 'Abdominals, obliques', 5),
+('Back', 'Lats, biceps', 6);
