@@ -1,9 +1,10 @@
 services:
   db:
-    image: mysql:8.0
+    image: citusdata/citus:13.0.3
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: tracker
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: tracker
     volumes:
       - ./sql/init:/docker-entrypoint-initdb.d
   analytics:
