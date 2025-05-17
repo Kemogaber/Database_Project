@@ -387,12 +387,12 @@ Result:
 
 ```{figure} Reports/r2.jpeg
 :width: 350px
-Report 2 -- Visualiztion
+Report 2 -- Visualiztion (Pie)
 ```
 
 ```{figure} Reports/r2-2.jpeg
 :width: 350px
-Report 2 -- Visualiztion
+Report 2 -- Visualiztion (Bar)
 ```
 
 
@@ -413,6 +413,11 @@ Result:
 --------+----------------------
  Male   | 160.0000000000000000
  Female | 120.0000000000000000
+```
+
+```{figure} Reports/r3.jpeg
+:width: 350px
+Report 3 -- Visualiztion (Pie)
 ```
 
 ### Report 4
@@ -476,6 +481,11 @@ Result:
  Emma Wilson |      1900
 ```
 
+```{figure} Reports/r6.jpeg
+:width: 350px
+Report 6 -- Visualiztion (Bar)
+```
+
 ### Report 7
 
 Rank users by their hydration level.
@@ -501,6 +511,11 @@ Result:
  Lisa Taylor |  80.0000000000000000
 ```
 
+```{figure} Reports/r7.jpeg
+:width: 350px
+Report 7 -- Visualiztion
+```
+
 ### Report 8
 
 Select challenges with a target of more than 500 points.
@@ -522,6 +537,11 @@ Result:
 ---------------------+-------------------------------------+---------------
  Hydration Challenge | Drink 2L of water daily for 30 days |           600
  Strength Challenge  | Increase bench press weight by 10kg |           900
+```
+
+```{figure} Reports/r8.jpeg
+:width: 350px
+Report 8 -- Visualiztion (Bar)
 ```
 
 ### Report 9
@@ -561,6 +581,11 @@ Result:
  JUICE    |   120.0000000000000000
 ```
 
+```{figure} Reports/r10.jpeg
+:width: 350px
+Report 10 -- Visualiztion (Bar)
+```
+
 ### Report 11
 
 Get the average daily protein, fats, and carbs for each user (Very useful in a dashboard).
@@ -580,6 +605,11 @@ Result:
  Michael Lee | 160.0000000000000000 | 55.0000000000000000 | 220.0000000000000000
  Emma Wilson | 130.0000000000000000 | 45.0000000000000000 | 190.0000000000000000
  Sarah Kim   | 110.0000000000000000 | 35.0000000000000000 | 170.0000000000000000
+```
+
+```{figure} Reports/r11.jpeg
+:width: 350px
+Report 11 -- Visualiztion (Bar)
 ```
 
 # Metabase and Docker
