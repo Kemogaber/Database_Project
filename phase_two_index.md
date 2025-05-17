@@ -380,9 +380,11 @@ Result:
 ```
     name     | log_count 
 -------------+-----------
- Sarah Kim   |         2
- Michael Lee |         2
- Emma Wilson |         2
+ Sarah Kim   |         3
+ Michael Lee |         3
+ Emma Wilson |         3
+ Lisa Taylor |         1
+ David Chen  |         1
 ```
 
 ```{figure} Reports/r2.jpeg
@@ -434,12 +436,12 @@ WHERE user_id NOT IN (
 
 Result:
 ```
-    name     
--------------
- David Chen
- Lisa Taylor
+ name 
+------
 
 ```
+
+No users with zero logs.
 
 ### Report 5
 
