@@ -42,6 +42,14 @@ INSERT INTO Log (log_id, logged_at, user_id) VALUES
 (11, '2025-05-16 09:00:00', 8),
 (12, '2025-05-16 11:00:00', 8);
 
+-- Adding corresponding entries in the Log table
+INSERT INTO Log (log_id, logged_at, user_id) VALUES
+(13, '2025-05-17 08:00:00', 6),
+(14, '2025-05-17 09:00:00', 7),
+(15, '2025-05-17 10:00:00', 8),
+(16, '2025-05-17 11:00:00', 9),
+(17, '2025-05-17 12:00:00', 10);
+
 -- Food_Log Table
 INSERT INTO Food_Log (log_id) VALUES
 (7),
@@ -51,6 +59,18 @@ INSERT INTO Food_Log (log_id) VALUES
 INSERT INTO Drink_Log (log_id, Calories, Category, Hydration_Level, amount) VALUES
 (8, 0, 'WATER', 100, 750),
 (12, 120, 'JUICE', 80, 250);
+
+-- Adding more water logs
+INSERT INTO Drink_Log (log_id, Calories, Category, Hydration_Level, amount) VALUES
+(13, 0, 'WATER', 100, 500),
+(14, 0, 'WATER', 90, 750),
+(15, 0, 'WATER', 85, 1000),
+(16, 0, 'WATER', 95, 600),
+(17, 0, 'WATER', 80, 800);
+
+INSERT INTO Drink_Log (log_id, Calories, Category, Hydration_Level, amount) VALUES
+(7, 50,   'SODA',    15, 200),
+(10, 50,   'SODA',       50, 300);
 
 -- Food Table
 INSERT INTO Food (f_id, name, calories, protein, fats, carbohydrates) VALUES
